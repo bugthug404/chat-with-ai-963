@@ -1,71 +1,52 @@
-# chat-with-ai-963 README
+# Chating with ai
 
-This is the README for your extension "chat-with-ai-963". After writing up a brief description, we recommend including the following sections.
+Brief description of your extension.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- List key features of your extension.
+- Describe how users can benefit from using it.
+- Include any screenshots or GIFs to showcase functionality.
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Mention any prerequisites or requirements for using your extension.
 
-## Extension Settings
+## Installation
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+1. Open Visual Studio Code.
+2. Go to the Extensions view by clicking on the square icon in the sidebar or pressing `Ctrl+Shift+X`.
+3. Search for "Your Extension Name".
+4. Click on the "Install" button.
 
-For example:
+## Usage
 
-This extension contributes the following settings:
+Provide instructions on how to use your extension. Include any commands, shortcuts, or settings that users need to know.
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+## Configuration
+
+Explain any configuration options available to users. For example, how to customize settings or preferences.
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+List any known issues or limitations of your extension. Provide workarounds if available.
 
-## Release Notes
+## Contributing
 
-Users appreciate release notes as you update your extension.
+Include guidelines for contributing to your extension. This could include information on how to report bugs, submit feature requests, or contribute code.
 
-### 1.0.0
+## License
 
-Initial release of ...
+State the license under which your extension is distributed. For example, MIT, Apache 2.0, etc.
 
-### 1.0.1
+## Contact
 
-Fixed issue #.
+Provide contact information for users to reach out with questions, feedback, or support requests.
 
-### 1.1.0
+## Acknowledgments
 
-Added features X, Y, and Z.
+If your extension includes any third-party libraries, tools, or resources, acknowledge them here.
 
 ---
 
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Feel free to customize this template to fit the specifics of your extension. Good luck with your extension development!

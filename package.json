@@ -7,7 +7,7 @@
     "vscode": "^1.87.0"
   },
   "categories": [
-    "Other"
+    "Machine Learning"
   ],
   "activationEvents": [],
   "main": "./out/extension.js",
@@ -19,8 +19,21 @@
       }
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bugthug404/chat-with-ai-963"
+  },
+  "configuration": {
+    "type": "object",
+    "properties": {
+      "chatApiUrl": {
+        "type": "string",
+        "default": "http://localhost:11433"
+      }
+    }
+  },
   "scripts": {
-    "vscode:prepublish": "pnpm run compile",
+    "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "pnpm run compile && pnpm run lint",
@@ -36,9 +49,11 @@
     "@vscode/test-cli": "^0.0.6",
     "@vscode/test-electron": "^2.3.9",
     "eslint": "^8.56.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "@vscode/vsce": "^2.24.0"
   },
   "dependencies": {
+    "express": "^4.18.3",
     "node": "^21.7.1",
     "node-fetch": "^3.3.2"
   }

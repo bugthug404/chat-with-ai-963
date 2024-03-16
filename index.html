@@ -1,45 +1,8 @@
-import * as vscode from "vscode";
-
-// import fetch from "node-fetch";
-
-export function activate(context: vscode.ExtensionContext) {
-  // Register command to open chat UI
-  let disposable = vscode.commands.registerCommand(
-    "chat-with-ai-963.chatPanel",
-    () => {
-      // Create a new webview panel
-      const panel = vscode.window.createWebviewPanel(
-        "chatUI", // Identifies the type of the webview. Used internally
-        "Chat UI", // Title of the panel displayed to the user
-        vscode.ViewColumn.One, // Editor column to show the new webview panel in.
-        {
-          enableScripts: true, // Enable JavaScript in the webview
-        }
-      );
-
-      const apiUrl = vscode.workspace.getConfiguration().get("chatApiUrl");
-
-      // Get the HTML content of the chat UI
-      const chatUIHtml = getChatUIHtml(panel.webview, apiUrl as string);
-
-      //   panel.webview.postMessage({ type: "getApiUrl" });
-
-      // Set the HTML content of the webview panel
-      panel.webview.html = chatUIHtml;
-    }
-  );
-
-  // Add the disposable to the context so that it can be disposed when the extension is deactivated
-  context.subscriptions.push(disposable);
-}
-
-function getChatUIHtml(webview: vscode.Webview, apiUrl?: string) {
-  return `
-  <html>
+<!DOCTYPE html>
+<html>
 
 <head>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
     <style>
         body {
             padding: 0px;
@@ -84,9 +47,7 @@ function getChatUIHtml(webview: vscode.Webview, apiUrl?: string) {
         }
 
         #button {
-           
             padding: 5px 15px;
-        
             border-radius: 5px;
         }
 
@@ -95,7 +56,7 @@ function getChatUIHtml(webview: vscode.Webview, apiUrl?: string) {
             outline: none;
             border: none;
             padding-left: 4px;
-            
+            background-color: transparent;
         }
 
         .modelInput {
@@ -106,12 +67,12 @@ function getChatUIHtml(webview: vscode.Webview, apiUrl?: string) {
 
 <body>
     <div class="page">
-
         <div class="result" id="result"> </div>
-        <div id="message">i will post query to this api:
-        <span id="showapiurl">http://localhost:11433</span></div>
+        <div class="configuration">
+            <div id="message">i will post query to this api: `${apiUrl}` <span id="apiUrl"></span> </div>
+            <input class="input" type="text" placeholder="Typess your message here" id="messageInput" />
+        </div>
         <div id="input-section">
-
             <input class="input" type="text" placeholder="Typess your message here" id="messageInput" />
             <select name="model" id="modelSelect">
                 <option value="codellama:7b">Codellama:7b</option>
@@ -121,6 +82,8 @@ function getChatUIHtml(webview: vscode.Webview, apiUrl?: string) {
         </div>
     </div>
     <script>
+        // Function to send message
+        window.getElementById("apiUrl").innerText = apiUrl
         const resultElement = document.getElementById('result');
         const messageElement = document.getElementById('message');
 
@@ -162,22 +125,13 @@ function getChatUIHtml(webview: vscode.Webview, apiUrl?: string) {
 
             }
         }
-
-
-
         // Add event listener to input field to send message when Enter key is pressed
         document.getElementById('messageInput').addEventListener('keypress', function (event) {
             if (event.key === 'Enter') {
-
                 sendMessage()
-
             }
         });
     </script>
 </body>
 
 </html>
-  `;
-}
-
-export function deactivate() {}
