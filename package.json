@@ -1,13 +1,14 @@
 {
   "name": "chat-with-ai-963",
-  "displayName": "Chat with AI",
-  "description": "Chat with ai",
+  "displayName": "Chat with ai",
+  "publisher": "karansingh963",
+  "description": "Chat with ai in localhost when you have powerfull machine to run llm locally.",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.87.0"
   },
   "categories": [
-    "Machine Learning"
+    "Other"
   ],
   "activationEvents": [],
   "main": "./out/extension.js",
@@ -52,9 +53,5 @@
     "typescript": "^5.3.3",
     "@vscode/vsce": "^2.24.0"
   },
-  "dependencies": {
-    "express": "^4.18.3",
-    "node": "^21.7.1",
-    "node-fetch": "^3.3.2"
-  }
+  "dependencies": {}
 }

@@ -1,7 +1,5 @@
 import * as vscode from "vscode";
 
-// import fetch from "node-fetch";
-
 export function activate(context: vscode.ExtensionContext) {
   // Register command to open chat UI
   let disposable = vscode.commands.registerCommand(
